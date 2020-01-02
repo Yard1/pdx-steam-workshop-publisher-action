@@ -2,7 +2,13 @@
 
 set -e
 
-df -h | grep shm
+if df -h | grep -e "shm\s*(([0-9]{3,}M)|([0-9]+G))"; then
+  sleep 0
+else
+  echo "This action required more than 64M of shm size, run this in your workflow before calling the action:"
+  echo 'run: |'
+  echo '  echo '{ "cgroup-parent": "/actions_job", "default-shm-size": "512M" }' | sudo tee /etc/docker/daemon.json && sudo systemctl reload docker'
+fi
 
 export STEAM_APP_ID=394360
 export STEAM_LOGIN=$INPUT_STEAMLOGIN > /dev/null
@@ -15,7 +21,7 @@ export GOOGLE_API_CREDENTIALS=$INPUT_GOOGLEAPICREDENTIALS > /dev/null
 export GOOGLE_CLIENT_SECRET=$INPUT_GOOGLECLIENTSECRET > /dev/null
 
 cd $GITHUB_WORKSPACE
-pwd
+
 if [ -z "$INPUT_DESCRIPTIONPATH" ] || [ "$INPUT_DESCRIPTIONPATH" = "" ]; then
   sleep 0
 else
@@ -24,6 +30,4 @@ fi
 
 sudo cp -R "$INPUT_MODPATH/." /home/steam/mod
 
-sudo ls /home/steam/mod
-exit 1
 sudo su -c /entrypoint.sh steam
