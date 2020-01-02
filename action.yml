@@ -1,0 +1,40 @@
+# action.yml
+name: 'PDX Steam Workshop Publisher Action'
+description: ''
+branding:
+  icon: 'upload'  
+  color: 'gray-dark'
+inputs: 
+  steamLogin:
+    description: ''
+    required: true
+  steamPassword:
+    description: ''
+    required: true
+  PDXLogin:
+    description: ''
+    required: true
+  PDXPassword:
+    description: ''
+    required: true
+  googleAPICredentials:
+    description: ''
+    required: true
+  googleClientSecret:
+    description: ''
+    required: true
+  modPath:
+    description: ''
+    required: true
+  steamSentryFileName:
+    description: ''
+    required: false
+  steamSentryFileHex:
+    description: ''
+    required: false
+  descriptionPath:
+    description: ''
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
