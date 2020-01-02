@@ -35,6 +35,9 @@ inputs:
   descriptionPath:
     description: ''
     required: false
+  debugImagePath:
+    description: ''
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'

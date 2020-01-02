@@ -19,6 +19,7 @@ export STEAM_SENTRY_FILE_NAME=$INPUT_STEAMSENTRYFILENAME
 export STEAM_SENTRY_FILE_HEX=$INPUT_STEAMSENTRYFILEHEX
 export GOOGLE_API_CREDENTIALS=$INPUT_GOOGLEAPICREDENTIALS
 export GOOGLE_CLIENT_SECRET=$INPUT_GOOGLECLIENTSECRET
+export DEBUG_IMAGES=$INPUT_DEBUGIMAGEPATH
 
 cd $GITHUB_WORKSPACE
 
@@ -31,5 +32,6 @@ fi
 sudo cp -R "$INPUT_MODPATH/." /home/steam/mod
 sudo chown -R steam:steam /home/steam/mod
 sudo chmod 775 -R /home/steam/mod
+sudo mkdir -p "$DEBUG_IMAGES"
 
-sudo -Eu steam HOME=/home/steam DEBUG_IMAGES=$GITHUB_WORKSPACE /entrypoint.sh
+sudo -Eu steam HOME=/home/steam /entrypoint.sh
