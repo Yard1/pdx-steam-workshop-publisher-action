@@ -10,7 +10,6 @@ else
   exit 1
 fi
 
-su - myUser -c "env myVar=\"$toto\" scriptThatNeedsMyVar.sh"
 export STEAM_APP_ID=394360
 export STEAM_LOGIN=$INPUT_STEAMLOGIN
 export STEAM_PASSWORD=$INPUT_STEAMPASSWORD
