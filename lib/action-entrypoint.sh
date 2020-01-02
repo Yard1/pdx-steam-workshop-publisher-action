@@ -29,9 +29,9 @@ else
   sudo cp -s "$INPUT_DESCRIPTIONPATH" "/home/steam/description.txt"
 fi
 
-sudo cp -R "$INPUT_MODPATH/." /home/steam/mod
-sudo chown -R steam:steam /home/steam/mod
-sudo chmod 775 -R /home/steam/mod
+sudo cp -R "$INPUT_MODPATH/." "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
+sudo chown -R -v steam:steam "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
+sudo chmod 777 -R -v "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
 sudo mkdir -p "$DEBUG_IMAGES"
 
 sudo -Eu steam HOME=/home/steam /entrypoint.sh
