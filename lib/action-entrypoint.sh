@@ -28,6 +28,6 @@ else
   sudo cp -s "$INPUT_DESCRIPTIONPATH" "/home/steam/description.txt"
 fi
 
-sudo cp -s "$INPUT_MODPATH/." /home/steam/mod
+sudo cp -R "$INPUT_MODPATH/." /home/steam/mod
 
 sudo -Eu steam HOME=/home/steam DEBUG_IMAGES=$GITHUB_WORKSPACE /entrypoint.sh
