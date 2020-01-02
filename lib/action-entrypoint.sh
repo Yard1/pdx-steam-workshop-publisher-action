@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+export STEAM_APP_ID=394360
+export STEAM_LOGIN=$INPUT_STEAM_LOGIN > /dev/null
+export STEAM_PASSWORD=$INPUT_STEAM_PASSWORD > /dev/null
+export PDX_LOGIN=$INPUT_PDX_LOGIN > /dev/null
+export PDX_PASSWORD=$INPUT_PDX_PASSWORD > /dev/null
+export STEAM_SENTRY_FILE_NAME=$INPUT_STEAM_SENTRY_FILE_NAME > /dev/null
+export STEAM_SENTRY_FILE_HEX=$INPUT_STEAM_SENTRY_FILE_HEX > /dev/null
+export GOOGLE_API_CREDENTIALS=$INPUT_GOOGLE_API_CREDENTIALS > /dev/null
+export GOOGLE_CLIENT_SECRET=$INPUT_GOOGLE_CLIENT_SECRET > /dev/null
+df -h | grep shm
+exit 1
+su -c /entrypoint.sh steam
