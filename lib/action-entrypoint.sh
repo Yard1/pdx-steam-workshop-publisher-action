@@ -1,14 +1,13 @@
 #!/bin/sh
 
 set -e
-df -h | grep -e "shm"
-df -h | grep -e "shm\s*(([0-9]{3,}M)|([0-9]+G))"
-if df -h | grep -e "shm\s*(([0-9]{3,}M)|([0-9]+G))"; then
+if df -h | grep -E "shm\s*(([0-9]{3,}M)|([0-9]+G))"; then
   sleep 0
 else
   echo "This action required more than 64M of shm size, run this in your workflow before calling the action:"
   echo 'run: |'
   echo '  echo '{ "cgroup-parent": "/actions_job", "default-shm-size": "512M" }' | sudo tee /etc/docker/daemon.json && sudo systemctl reload docker'
+  exit 1
 fi
 
 export STEAM_APP_ID=394360
