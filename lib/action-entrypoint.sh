@@ -29,9 +29,14 @@ else
   sudo cp -s "$INPUT_DESCRIPTIONPATH" "/home/steam/description.txt"
 fi
 
+if [ -z "$INPUT_DEBUGIMAGEPATH" ] || [ "$INPUT_DEBUGIMAGEPATH" = "" ]; then
+  sleep 0
+else
+  sudo mkdir -p "$DEBUG_IMAGES"
+fi
+
 sudo cp -R "$INPUT_MODPATH/." "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
-sudo chown -R -v steam:steam "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
-sudo chmod 777 -R -v "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
-sudo mkdir -p "$DEBUG_IMAGES"
+sudo chown -R steam:steam "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
+sudo chmod 777 -R "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
 
 sudo -Eu steam HOME=/home/steam /entrypoint.sh
