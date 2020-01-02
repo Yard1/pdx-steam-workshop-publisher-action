@@ -26,7 +26,7 @@ cd $GITHUB_WORKSPACE
 if [ -z "$INPUT_DESCRIPTIONPATH" ] || [ "$INPUT_DESCRIPTIONPATH" = "" ]; then
   sleep 0
 else
-  sudo cp -s "$INPUT_DESCRIPTIONPATH" "/home/steam/description.txt"
+  sudo cp "$INPUT_DESCRIPTIONPATH" "/home/steam/description.txt"
 fi
 
 if [ -z "$INPUT_DEBUGIMAGEPATH" ] || [ "$INPUT_DEBUGIMAGEPATH" = "" ]; then
