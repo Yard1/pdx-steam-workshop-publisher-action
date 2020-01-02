@@ -25,9 +25,9 @@ cd $GITHUB_WORKSPACE
 if [ -z "$INPUT_DESCRIPTIONPATH" ] || [ "$INPUT_DESCRIPTIONPATH" = "" ]; then
   sleep 0
 else
-  sudo cp "$INPUT_DESCRIPTIONPATH" "/home/steam/description.txt"
+  sudo cp -s "$INPUT_DESCRIPTIONPATH" "/home/steam/description.txt"
 fi
 
-sudo cp -R "$INPUT_MODPATH/." /home/steam/mod
+sudo cp -s "$INPUT_MODPATH/." /home/steam/mod
 
-sudo -Eu steam HOME=/home/steam /entrypoint.sh
+sudo -Eu steam HOME=/home/steam DEBUG_IMAGES=$GITHUB_WORKSPACE /entrypoint.sh
