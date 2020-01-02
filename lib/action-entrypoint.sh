@@ -38,5 +38,5 @@ fi
 sudo cp -R "$INPUT_MODPATH/." "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
 sudo chown -R steam:steam "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
 sudo chmod 777 -R "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
-
+ls "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
 sudo -Eu steam HOME=/home/steam /entrypoint.sh
