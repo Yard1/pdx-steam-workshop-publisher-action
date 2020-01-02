@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -e
-if df -h | grep -E "shm\s*(([0-9]{3,}M)|([0-9]+G))"; then
+if df -h | grep -E "shm\s*(([0-9]{3,}M)|([0-9]+G))" > /dev/null; then
   sleep 0
 else
   echo "This action required more than 64M of shm size, run this in your workflow before calling the action:"
