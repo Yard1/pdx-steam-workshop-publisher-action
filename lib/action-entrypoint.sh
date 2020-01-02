@@ -29,5 +29,7 @@ else
 fi
 
 sudo cp -R "$INPUT_MODPATH/." /home/steam/mod
+sudo chown -R steam:steam /home/steam/mod
+sudo chmod 775 -R /home/steam/mod
 
 sudo -Eu steam HOME=/home/steam DEBUG_IMAGES=$GITHUB_WORKSPACE /entrypoint.sh
