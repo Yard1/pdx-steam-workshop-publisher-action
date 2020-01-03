@@ -1,42 +1,42 @@
 # action.yml
 name: 'PDX Steam Workshop Publisher Action'
-description: ''
+description: 'Automatically upload your Hearts of Iron IV mod to Steam Workshop.'
 branding:
   icon: 'upload'  
   color: 'gray-dark'
 inputs: 
   steamLogin:
-    description: ''
+    description: 'The login for Steam account.'
     required: true
   steamPassword:
-    description: ''
+    description: 'The password for Steam account. Make sure to use a secret.'
     required: true
   PDXLogin:
-    description: ''
+    description: 'The email for Paradox account.'
     required: true
   PDXPassword:
-    description: ''
+    description: 'The password for Paradox account. Make sure to use a secret.'
     required: true
   googleAPICredentials:
-    description: ''
+    description: 'Google API credentials. Check Yard1/docker-steamcmd-gmail for information on how to obtain this. Make sure to use a secret.'
     required: true
   googleClientSecret:
-    description: ''
+    description: 'Google API client secret. Check Yard1/docker-steamcmd-gmail for information on how to obtain this. Make sure to use a secret.'
     required: true
   modPath:
-    description: ''
+    description: 'The path in $GITHUB_WORKSPACE to the mod directory.'
     required: true
   steamSentryFileName:
-    description: ''
+    description: 'The name of the Steam Sentry file (ssfn*). If provided alongside steamSentryFileHex, Steam will attempt to use it instead of requiring Steam Guard authentication again. Make sure to use a secret.'
     required: false
   steamSentryFileHex:
-    description: ''
+    description: 'The Steam Sentry file in plain hex form, following the same format xxd -p uses. If provided alongside steamSentryFileName, Steam will attempt to use it instead of requiring Steam Guard authentication again. Make sure to use a secret.'
     required: false
   descriptionPath:
-    description: ''
+    description: 'The path in $GITHUB_WORKSPACE to a text file containing mod description.'
     required: false
   debugImagePath:
-    description: ''
+    description: 'The path in $GITHUB_WORKSPACE to a folder where debug images will be saved (eg. to upload them as artifacts for review in case of failure).'
     required: false
 runs:
   using: 'docker'
