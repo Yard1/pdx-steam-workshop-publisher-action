@@ -34,7 +34,7 @@ if [ -z "$INPUT_DEBUGIMAGEPATH" ] || [ "$INPUT_DEBUGIMAGEPATH" = "" ]; then
 else
   sudo mkdir -p "$DEBUG_IMAGES"
 fi
-
+sudo rm -rf "$INPUT_MODPATH/.*"
 sudo cp -R "$INPUT_MODPATH/." "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
 sudo chown -R steam:steam "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
 sudo chmod 777 -R "/home/steam/.local/share/Paradox Interactive/Hearts of Iron IV/mod"
