@@ -38,6 +38,9 @@ inputs:
   debugImagePath:
     description: 'The path in $GITHUB_WORKSPACE to a folder where debug images will be saved (eg. to upload them as artifacts for review in case of failure).'
     required: false
+  debugSetupVNC:
+    description: 'Whether to start a VNC server during a run. Should be only used for debugging.'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
