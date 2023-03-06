@@ -2,6 +2,8 @@
 
 Automatically upload your Hearts of Iron IV (support for more Paradox games to come) mod to Steam Workshop.
 
+Only email Steam Guard is supported. You need to configure a POP3 server on your email account so that the script can obtain Steam Guard codes. Passing a Steam Sentry File no longer works reliably.
+
 *Readme will be extended soon.*
 
 ## Configuration
@@ -18,20 +20,23 @@ The email for Paradox account.
 ### PDXPassword (required)
 The password for Paradox account. Make sure to use a secret.
 
-### googleAPICredentials (required)
-Google API credentials. Check [Yard1/docker-steamcmd-gmail](https://github.com/Yard1/docker-steamcmd-gmail) for information on how to obtain this. Make sure to use a secret.
-
-### googleClientSecret (required)
-Google API client secret. Check [Yard1/docker-steamcmd-gmail](https://github.com/Yard1/docker-steamcmd-gmail) for information on how to obtain this. Make sure to use a secret.
-
 ### modPath (required)
 The path in `$GITHUB_WORKSPACE` to the mod directory.
 
-### steamSentryFileName (optional)
-The name of the Steam Sentry file (ssfn*). If provided alongside *steamSentryFileHex*, Steam will attempt to use it instead of requiring Steam Guard authentication again. Make sure to use a secret.
+### POP3Address (required)
+Address to POP3 email server to obtain Steam Guard codes from. Make sure to use a secret.
 
-### steamSentryFileHex (optional)
-The Steam Sentry file in plain hex form, following the same format `xxd -p` uses. If provided alongside *steamSentryFileName*, Steam will attempt to use it instead of requiring Steam Guard authentication again. Make sure to use a secret.
+### POP3User (required)
+User of POP3 email server to obtain Steam Guard codes from. Make sure to use a secret.
+
+### POP3Password (required)
+Password of POP3 email server to obtain Steam Guard codes from. Make sure to use a secret.
+
+### POP3Port (optional)
+Port of POP3 email server to obtain Steam Guard codes from. Defaults to `995`.
+
+### POP3NoSSL (optional)
+Set to `true` if the POP3 email server doesn't support SSL. Defaults to `false`.
 
 ### descriptionPath (optional)
 The path in `$GITHUB_WORKSPACE` to a text file containing mod description.

@@ -44,11 +44,10 @@ jobs:
         steamPassword: ${{ secrets.STEAMPASSWORD }}
         PDXLogin: EMAIL
         PDXPassword: ${{ secrets.PDXPASSWORD }}
-        googleAPICredentials: ${{ secrets.GOOGLEAPICREDENTIALS }}
-        googleClientSecret: ${{ secrets.GOOGLECLIENTSECRET }}
         modPath: "build"
-        steamSentryFileName:  ${{ secrets.STEAMSENTRYFILENAME }}
-        steamSentryFileHex: ${{ secrets.STEAMSENTRYFILEHEX }}
+        POP3Address:  ${{ secrets.POP3ADDRESS }}
+        POP3User: ${{ secrets.POP3USER }}
+        POP3Password: ${{ secrets.POP3PASSWORD }}
         debugImagePath: images
     - name: Upload artifact
       if: always()

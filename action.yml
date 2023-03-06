@@ -17,21 +17,26 @@ inputs:
   PDXPassword:
     description: 'The password for Paradox account. Make sure to use a secret.'
     required: true
-  googleAPICredentials:
-    description: 'Google API credentials. Check Yard1/docker-steamcmd-gmail for information on how to obtain this. Make sure to use a secret.'
+  POP3Address:
+    description: 'Address to POP3 email server to obtain Steam Guard codes from. Make sure to use a secret.'
     required: true
-  googleClientSecret:
-    description: 'Google API client secret. Check Yard1/docker-steamcmd-gmail for information on how to obtain this. Make sure to use a secret.'
+  POP3User:
+    description: 'User of POP3 email server to obtain Steam Guard codes from. Make sure to use a secret.'
     required: true
+  POP3Password:
+    description: 'Password of POP3 email server to obtain Steam Guard codes from. Make sure to use a secret.'
+    required: true
+  POP3Port:
+    description: 'Port of POP3 email server to obtain Steam Guard codes from.'
+    required: false
+    default: 995
+  POP3NoSSL:
+    description: 'Set to 'true' if the POP3 email server doesn't support SSL.'
+    required: false
+    default: "false"
   modPath:
     description: 'The path in $GITHUB_WORKSPACE to the mod directory.'
     required: true
-  steamSentryFileName:
-    description: 'The name of the Steam Sentry file (ssfn*). If provided alongside steamSentryFileHex, Steam will attempt to use it instead of requiring Steam Guard authentication again. Make sure to use a secret.'
-    required: false
-  steamSentryFileHex:
-    description: 'The Steam Sentry file in plain hex form, following the same format xxd -p uses. If provided alongside steamSentryFileName, Steam will attempt to use it instead of requiring Steam Guard authentication again. Make sure to use a secret.'
-    required: false
   descriptionPath:
     description: 'The path in $GITHUB_WORKSPACE to a text file containing mod description.'
     required: false
