@@ -19,7 +19,7 @@ export POP3_ADDRESS="$INPUT_POP3ADDRESS"
 export POP3_USER="$INPUT_POP3USER"
 export POP3_PASSWORD="$INPUT_POP3PASSWORD"
 export POP3_PORT="$INPUT_POP3PORT"
-if [ "$INPUT_POP3NOSSL" == "true" ]; then
+if [ "$INPUT_POP3NOSSL" = "true" ]; then
   export POP3_NO_SSL="1"
 else
   export POP3_NO_SSL="0"
