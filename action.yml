@@ -31,7 +31,7 @@ inputs:
     required: false
     default: 995
   POP3NoSSL:
-    description: 'Set to "true" if the POP3 email server doesn't support SSL.'
+    description: 'Set to "true" if the POP3 email server does not support SSL.'
     required: false
     default: "false"
   modPath:
